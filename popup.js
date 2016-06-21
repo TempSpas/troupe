@@ -1,32 +1,32 @@
 /* "Borrowed from the bookmarklet on the GTmetrix website" */
 
-chrome.tabs.getSelected(null, function(tab)
-{
-	var checkPageButton = document.getElementById('checkPage');
-	checkPageButton.addEventListener('click', function()
-	{
-		chrome.tabs.getSelected(null, function(tab)
-		{
-			var elements = document.getElementsByTagName('*');
+// chrome.tabs.getSelected(null, function(tab)
+// {
+// 	var checkPageButton = document.getElementById('checkPage');
+// 	checkPageButton.addEventListener('click', function()
+// 	{
+// 		chrome.tabs.getSelected(null, function(tab)
+// 		{
+// 			var elements = document.getElementsByTagName('*');
 
-			for(var i = 0; i < elements.length; i++)
-			{
-				var element = elements[i];
+// 			for(var i = 0; i < elements.length; i++)
+// 			{
+// 				var element = elements[i];
 
-				for(var j = 0; j < element.childNodes.length; j++)
-				{
-					var node = element.childNodes[j];
+// 				for(var j = 0; j < element.childNodes.length; j++)
+// 				{
+// 					var node = element.childNodes[j];
 
-					if(node.nodeType === 3) {
-						var text = node.nodeValue;
-						var replacedText = text.replace(/Trump/gi, 'Jared');
+// 					if(node.nodeType === 3) {
+// 						var text = node.nodeValue;
+// 						var replacedText = text.replace(/Trump/gi, 'Jared');
 
-						if(replacedText !== text) {
-							element.replaceChild(document.createTextNode(replacedText), node);
-						}
-					}
-				}
-			}
+// 						if(replacedText !== text) {
+// 							element.replaceChild(document.createTextNode(replacedText), node);
+// 						}
+// 					}
+// 				}
+// 			}
 			// d = document;
 
 			// var f = d.createElement('form');
@@ -40,27 +40,27 @@ chrome.tabs.getSelected(null, function(tab)
 			// f.appendChild(i);
 			// d.body.appendChild(f);
 			// f.submit();
-		});
-	}, false);
-}, false);
+// 		});
+// 	}, false);
+// }, false);
 
-// var elements = document.getElementsByTagName('*');
+var elements = document.getElementsByTagName('*');
 
-// for(var i = 0; i < elements.length; i++)
-// {
-// 	var element = elements[i];
+for(var i = 0; i < elements.length; i++)
+{
+	var element = elements[i];
 
-// 	for(var j = 0; j < element.childNodes.length; j++)
-// 	{
-// 		var node = element.childNodes[j];
+	for(var j = 0; j < element.childNodes.length; j++)
+	{
+		var node = element.childNodes[j];
 
-// 		if(node.nodeType === 3) {
-// 			var text = node.nodeValue;
-// 			var replacedText = text.replace(/Trump/gi, 'Jared');
+		if(node.nodeType === 3) {
+			var text = node.nodeValue;
+			var replacedText = text.replace(/Trump/gi, 'Jared');
 
-// 			if(replacedText !== text) {
-// 				element.replaceChild(document.createTextNode(replacedText), node);
-// 			}
-// 		}
-// 	}
-// }
+			if(replacedText !== text) {
+				element.replaceChild(document.createTextNode(replacedText), node);
+			}
+		}
+	}
+}
