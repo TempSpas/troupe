@@ -1,13 +1,13 @@
 {
 	"manifest_version": 2,
 
-	"name": "GTmetrix Analyzer Plugin",
-	"description": "This extension will analyze a page using GTmetrix",
+	"name": "Jared Simulator",
+	"description": "This extension will analyze a page using Jared",
 	"version": "1.0",
 
 	"browser_action": {
 		"default_icon": "sweeterman.jpg",
-		"default_popup": "popup.html"
+		// "default_popup": "popup.html"
 	},
 
 	"permissions": [
