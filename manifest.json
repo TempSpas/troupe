@@ -20,7 +20,7 @@
                 "*://*/*"
             ],
             "js": [
-                "content.js"
+                "popup.js"
             ],
             "run_at": "document_end"
         }
