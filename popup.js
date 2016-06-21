@@ -56,11 +56,7 @@ for(var i = 0; i < elements.length; i++)
 
 		if(node.nodeType === 3) {
 			var text = node.nodeValue;
-<<<<<<< HEAD
-			var replacedText = text.replace('Trump', 'Jared');
-=======
 			var replacedText = text.replace('Trump', 'Dong');
->>>>>>> origin/master
 
 			if(replacedText !== text) {
 				element.replaceChild(document.createTextNode(replacedText), node);
