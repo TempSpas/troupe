@@ -5,8 +5,8 @@
 	"description": "This extension will analyze a page using Jared",
 	"version": "1.0",
 
-	"browser_action": {
-		"default_icon": "sweeterman.jpg",
+	//"browser_action": {
+		//"default_icon": "sweeterman.jpg",
 		// "default_popup": "popup.html"
 	},
 
