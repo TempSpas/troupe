@@ -44,24 +44,30 @@
 // 	}, false);
 // }, false);
 
-var elements = document.getElementsByTagName('*');
+var context = document.querySelector(".context");
+var instance = new Mark(context);
+instance.mark(keyword [, options]);
+instance.mark(trump [, options]);
 
-for(var i = 0; i < elements.length; i++)
-{
-	var element = elements[i];
 
-	for(var j = 0; j < element.childNodes.length; j++)
-	{
-		var node = element.childNodes[j];
+// var elements = document.getElementsByTagName('*');
 
-		if(node.nodeType === 3) {
-			var text = node.nodeValue;
-			var replacedText = text.replace(/Trump/g, "Dong");
+// for(var i = 0; i < elements.length; i++)
+// {
+// 	var element = elements[i];
 
-			if(replacedText !== text) {
-				element.replaceChild(document.createTextNode(replacedText), node);
+// 	for(var j = 0; j < element.childNodes.length; j++)
+// 	{
+// 		var node = element.childNodes[j];
+
+// 		if(node.nodeType === 3) {
+// 			var text = node.nodeValue;
+// 			var replacedText = text.replace(/Trump/g, "Dong");
+
+// 			if(replacedText !== text) {
+// 				element.replaceChild(document.createTextNode(replacedText), node);
 			
-			}
-		}
-	}
-}
+// 			}
+// 		}
+// 	}
+// }
