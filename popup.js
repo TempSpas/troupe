@@ -46,7 +46,7 @@
 
 var context = document.querySelector(".context");
 var instance = new Mark(context);
-instance.mark(keyword [, options]);
+// instance.mark(keyword [, options]);
 instance.mark(trump [, options]);
 
 
