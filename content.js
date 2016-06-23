@@ -1,37 +1,21 @@
-highlight('yellow');
 
+/* Only works for text enclosed in div tags with class context */
+var instance = new Mark(document.querySelector(".context"));
+instance.mark("Donald Trump");
 
-function makeEditableAndHighlight(colour) {
-	var range, sel = window.getSelection();
-	if (sel.rangeCount && sel.getRangeAt) {
-		range = sel.getRangeAt(0);
-	}
-	document.designMode = "on";
-	if (range) {
-		sel.removeAllRanges();
-		sel.addRange(range);
-	}
-	// Use HiliteColor since some browsers apply BackColor to the whole block
-	if (!document.execCommand("HiliteColor", false, colour)) {
-		document.execCommand("BackColor", false, colour);
-	}
-	document.designMode = "off";
-}
-
-function highlight(colour) {
-	var range, sel;
-	if (window.getSelection) {
-		// IE9 and non-IE
-		try {
-			if (!document.execCommand("BackColor", false, colour)) {
-				makeEditableAndHighlight(colour);
+chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
+	switch(message.type) {
+		case "colors-div":
+			var divs = document.querySelectorAll("div");
+			if(divs.length === 0) {
+				alert("There are no any divs in the page.");
+			} else {
+				for(var i=0; i&lt;divs.length; i++) {
+					// divs[i].style.backgroundColor = message.color;
+					var instance = new Mark(document.querySelector(divs[i]));
+					instance.mark("Donald Trump");
+				}
 			}
-		} catch (ex) {
-			makeEditableAndHighlight(colour)
-		}
-	} else if (document.selection && document.selection.createRange) {
-		// IE <= 8 case
-		range = document.selection.createRange();
-		range.execCommand("BackColor", false, colour);
+		break;
 	}
-}
+});
