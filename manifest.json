@@ -10,10 +10,6 @@
 		//"default_icon": "sweeterman.jpg",
 		// "default_popup": "popup.html"
 	//},
-	/* Added to possibly fix the CNN/Google issue */
-	"background": {
-		"persistent": true,
-	},
 
 	"permissions": [
 		"activeTab",
