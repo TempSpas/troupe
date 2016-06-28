@@ -47,7 +47,7 @@
 // chrome.tabs.executeScript({
 // 	file: 'mark.js'
 // });
-var context = document.querySelector("*"); 
+    var context = document.querySelector("*"); 
 	var instance = new Mark(context);
 	instance.mark("Trump");
  
