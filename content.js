@@ -44,11 +44,14 @@
 // 	}, false);
 // }, false);
 
-var context = document.querySelector(".context");
-var instance = new Mark(context);
-// instance.mark(keyword [, options]);
-instance.mark(trump [, options]);
-
+// chrome.tabs.executeScript({
+// 	file: 'mark.js'
+// });
+var context = document.querySelector("*"); 
+	var instance = new Mark(context);
+	instance.mark("Trump");
+ 
+//ayyy();
 
 // var elements = document.getElementsByTagName('*');
 
