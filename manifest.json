@@ -3,7 +3,7 @@
 	"manifest_version": 2,
 
 	"name": "Jared Simulator",
-	"description": "This extension will analyze a page using Jared",
+	"description": "An extension to provide information about actors and actresses",
 	"version": "1.0",
 
 	//"browser_action": {
@@ -25,10 +25,12 @@
             ],
             "js": [
             	"mark.es6.js",
-                "content.js"
+                "content.js",
+                "tipped-4.5.7-light/js/tipped/tipped.js"
             ],
             "css": [
-            	"highlight.css"
+            	"highlight.css",
+            	"tipped-4.5.7-light/css/tipped/tipped.css"
             ],
             "run_at": "document_end"
         }
