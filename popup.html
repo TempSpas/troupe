@@ -10,3 +10,19 @@
 		<button id="checkPage">Get rid of Trump</button>
 	</body>
 </html> -->
+
+
+<span class='function' data-content="Some content" data-title="Actor Name">Function 1</span>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		Tipped.create('.function', function(element) {
+			return {
+				title: $(element).data('title'),
+				content: $(element).data('content')
+			};
+		}, {
+			skin: 'light'
+		});
+	});
+</script>
