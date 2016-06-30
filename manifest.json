@@ -3,7 +3,7 @@
 	"manifest_version": 2,
 
 	"name": "Jared Simulator",
-	"description": "This extension will analyze a page using Jared",
+	"description": "An extension to provide information about actors and actresses",
 	"version": "1.0",
 
 	//"browser_action": {
