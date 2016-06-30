@@ -1,6 +1,12 @@
-<!-- <!doctype html>
+<!-- *** NOTE: THIS NEEDS TO BE LINKED SOMEHOW IN THE MANIFEST FILES-->
+
+<!doctype html>
 <html>
-	<head>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.12.3.min.js"></script>
+	<script type="text/javascript" src="tipped-4.5.7-light/js/tipped/tipped.js"></script>
+	<link rel="stylesheet" type="text/css" href="tipped-4.5.7-light/css/tipped/tipped.css"/>
+
+	<!-- <head>
 		<title>Sweeterman Analyzer</title>
 		<script src="popup.js"></script>
 	</head>
@@ -8,21 +14,23 @@
 	<body>
 		<h1>Sweeterman Analyzer</h1>
 		<button id="checkPage">Get rid of Trump</button>
-	</body>
-</html> -->
+	</body> -->
 
+	<script src=".js"></script>
 
-<span class='function' data-content="Some content" data-title="Actor Name">Function 1</span>
+	<span class='function' data-content="Some content" data-title="Actor Name">Function 1</span>
 
-<script type="text/javascript">
-	$(document).ready(function() {
-		Tipped.create('.function', function(element) {
-			return {
-				title: $(element).data('title'),
-				content: $(element).data('content')
-			};
-		}, {
-			skin: 'light'
+	<script type="text/javascript">
+		$(document).ready(function() {
+			Tipped.create('.function', function(element) {
+				return {
+					title: $(element).data('title'),
+					content: $(element).data('content')
+				};
+			}, {
+				skin: 'light'
+			});
 		});
-	});
-</script>
+	</script>
+</html>
+
