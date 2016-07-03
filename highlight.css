@@ -4,3 +4,9 @@ mark {
 	/*text-decoration: underline;*/
 	/*text-decoration-color: #99e6e6;*/
 }
+
+/* Added for highlight.js jQuery plugin */
+.highlight {
+	background-color: #99e6e6;
+	color: black;
+}
