@@ -6,6 +6,10 @@ $("body").highlight("Donald Trump");
 
 
 // $(document).ready(function() {
+// 	Tipped.create('.highlight', 'Some tooltip text');
+// });
+
+// $(document).ready(function() {
 // 	Tipped.create('instance', 'Some tooltip text');
 // });
 
