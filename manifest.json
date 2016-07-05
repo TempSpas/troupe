@@ -24,11 +24,11 @@
 				"<all_urls>"
 			],
 			"js": [
+				"planb/jquery-3.0.0.min.js",
 				"planb/jquery.highlight.js",
 				"mark.es6.js",
 				"content.js",
-				"tipped-4.5.7-light/js/tipped/tipped.js",
-				"planb/jquery-3.0.0.min.js"
+				"tipped-4.5.7-light/js/tipped/tipped.js"
 			],
 			"css": [
 				"highlight.css",
