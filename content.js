@@ -10,10 +10,10 @@ $("body").highlight("Donald Trump");
 // });
 
 $(document).ready(function() {
-	Tipped.create('.function', function(element) {
+	Tipped.create('.highlight', function(element) {
 		return {
-			title: $(element).data('title'),
-			content: $(element).data('content')
+			title: $(element).data("Title"),
+			content: $(element).data("content")
 		};
 	}, {
 		skin: 'light'
