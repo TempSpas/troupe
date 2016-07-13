@@ -19,20 +19,23 @@
    ],
 
 	"content_scripts": [
-        {
-            "matches": [
-                "<all_urls>"
-            ],
-            "js": [
-            	"mark.es6.js",
-                "content.js",
-                "tipped-4.5.7-light/js/tipped/tipped.js"
-            ],
-            "css": [
-            	"highlight.css",
-            	"tipped-4.5.7-light/css/tipped/tipped.css"
-            ],
-            "run_at": "document_end"
-        }
-    ]
+		{
+			"matches": [
+				"<all_urls>"
+			],
+			"js": [
+				// Note: the jquery version must appear first
+				"planb/jquery-3.0.0.min.js",
+				"planb/jquery.highlight.js",
+				"mark.es6.js",
+				"content.js",
+				"tipped-4.5.7-light/js/tipped/tipped.js"
+			],
+			"css": [
+				"highlight.css",
+				"tipped-4.5.7-light/css/tipped/tipped.css"
+			],
+			"run_at": "document_end"
+		}
+	]
 }
