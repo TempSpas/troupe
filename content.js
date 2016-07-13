@@ -19,7 +19,8 @@ $(document).ready(function() {
 		//     alert(person);
 		// });
 		return {
-			title: $(element).data('person'),
+			title: $(element).data(person),
+			// title: person,
 			content: $(element).data('content')
 		};
 	}, {
