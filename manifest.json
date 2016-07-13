@@ -24,7 +24,7 @@
 				"<all_urls>"
 			],
 			"js": [
-				// Note: the jquery version must appear first
+				// Note: the jQuery version must appear first
 				"planb/jquery-3.0.0.min.js",
 				"planb/jquery.highlight.js",
 				"mark.es6.js",

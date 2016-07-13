@@ -11,9 +11,15 @@ $("body").highlight("Donald Trump");
 
 // Need to implement the display of the tooltip, so we use this code
 $(document).ready(function() {
-	Tipped.create('.highlight', function(element) {
+	Tipped.create('.highlight', function(element)
+	{
+		var person;
+		$(".highlight").live("click", function () {
+    		person =  $(this).text();
+		    alert(person);
+		});
 		return {
-			title: $(element).data('title'),
+			title: $(element).data('person'),
 			content: $(element).data('content')
 		};
 	}, {
