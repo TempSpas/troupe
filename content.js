@@ -22,14 +22,3 @@ $(document).ready(function() {
 		skin: 'light'
 	});
 });
-
-
-// $(document).ready(function() {
-// 	Tipped.create('instance', 'Some tooltip text');
-// });
-
-// $(document).on('click', '#welcome_message:not(.active)', function(){
-//     $(this).addClass('active');
-//     $('.popup').show();
-//     return false;
-// })
