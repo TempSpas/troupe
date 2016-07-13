@@ -13,15 +13,14 @@ $("body").highlight("Donald Trump");
 $(document).ready(function() {
 	Tipped.create('.highlight', function(element)
 	{
-		var person = $(this).text();
+		var person = $('.highlight').html();
 		// $(".highlight").live("click", function () {
   //   		person =  $(this).text();
 		//     alert(person);
 		// });
 		return {
-			title: $(element).data(person),
-			// title: person,
-			content: $(element).data('content')
+			title: person,
+			content: "blah"
 		};
 	}, {
 		skin: 'light'
