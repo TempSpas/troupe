@@ -14,13 +14,9 @@ $(document).ready(function() {
 	Tipped.create('.highlight', function(element)
 	{
 		var person = $('.highlight').html();
-		// $(".highlight").live("click", function () {
-  //   		person =  $(this).text();
-		//     alert(person);
-		// });
 		return {
 			title: person,
-			content: "blah"
+			content: "content blah"
 		};
 	}, {
 		skin: 'light'
