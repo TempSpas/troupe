@@ -9,11 +9,12 @@ $("body").highlight("Donald Trump");
 // 	Tipped.create('.highlight', 'Some tooltip text');
 // });
 
+// Need to implement the display of the tooltip, so we use this code
 $(document).ready(function() {
 	Tipped.create('.highlight', function(element) {
 		return {
-			title: $(element).data("Title"),
-			content: $(element).data("content")
+			title: $(element).data('title'),
+			content: $(element).data('content')
 		};
 	}, {
 		skin: 'light'
