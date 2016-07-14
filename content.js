@@ -7,7 +7,6 @@ $(document).ready(function() {
 	Tipped.create('.highlight', function(element)
 	{
 		var person = $('.highlight').html();
-		
 		var personToSearch = $(person).text($(person).html()); // Not sure if it will work
 
 		return {
