@@ -29,7 +29,9 @@
 				"planb/jquery.highlight.js",
 				"mark.es6.js",
 				"content.js",
-				"tipped-4.5.7-light/js/tipped/tipped.js"
+				"tipped-4.5.7-light/js/tipped/tipped.js",
+				"themoviedb-javascript/themoviedb.js",
+				"themoviedb-javascript/themoviedb.min.js"
 			],
 			"css": [
 				"highlight.css",
