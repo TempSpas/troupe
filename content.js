@@ -2,14 +2,15 @@
 // Highlight all instances of the actor's name on the page
 $("body").highlight("George Clooney");
 
-// Need to implement the display of the tooltip, so we use this code
+// Callback functions for responses
 function successCB(data) {
-    console.log("Success callback: " + data);
+	console.log("Success callback: " + data);
 };
 
 function errorCB(data) {
-            console.log("Error callback: " + data);
-    };
+	console.log("Error callback: " + data);
+	// https://www.themoviedb.org/documentation/api/status-codes
+};
 
 $(document).ready(function() {
 	Tipped.create('.highlight', function(element)
