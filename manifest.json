@@ -2,8 +2,8 @@
 {
 	"manifest_version": 2,
 
-	"name": "Jared Simulator",
-	"description": "An extension to provide information about actors and actresses",
+	"name": "Actor Finder",
+	"description": "An extension to provide information about actors and actresses straight from web pages",
 	"version": "1.0",
 
 	//"browser_action": {

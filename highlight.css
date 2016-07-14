@@ -8,5 +8,6 @@ mark {
 /* Added for highlight.js jQuery plugin */
 .highlight {
 	background-color: #99e6e6;
+	opacity: 0.5; /* Test opacity */
 	/*color: black;*/
 }
