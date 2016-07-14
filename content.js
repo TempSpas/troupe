@@ -9,9 +9,12 @@ $(document).ready(function() {
 		var person = $('.highlight').html();
 		var personToSearch = $(person).text($(person).html()); // Not sure if it will work
 
+		var id = theMovieDb.search.getPerson({"query":person}, successCB, errorCB);
+
 		return {
 			title: person,
-			content: "content blah"
+			// content: "content blah"
+			content: id
 		};
 	}, {
 		skin: 'light'
