@@ -2,7 +2,7 @@
 {
 	"manifest_version": 2,
 
-	"name": "Actor Finder",
+	"name": "Troupe",
 	"description": "An extension to provide information about actors and actresses straight from web pages",
 	"version": "1.0",
 
