@@ -26,7 +26,7 @@ function successCB(data) {
 
         //     }
         // };
-        this.updateStage();
+        // this.updateStage();
     } else {
         this.error("No Data");
 	}
