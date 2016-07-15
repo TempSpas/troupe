@@ -1,7 +1,6 @@
 
 /* Added for highlight.js jQuery plugin */
 .highlight {
-	background-color: #99e6e6;
-	background-opacity: 0.5; /* Test opacity */
-	/*color: black;*/
+	/*background-color: #99e6e6;*/
+	background-color: rgba(153, 230, 230, 0.6);
 }
