@@ -19,6 +19,7 @@ $(document).ready(function() {
 	Tipped.create('.highlight', function(element)
 	{
 		var person = $('.highlight').html();
+		var id = "";
 		
 		var json = theMovieDb.search.getPerson({"query":person}, function (data) {
 			data = JSON.parse(data);
@@ -26,7 +27,7 @@ $(document).ready(function() {
 				console.log("HELLO JOSE!");
 
 				console.log("ID: " + data.results[2]);
-				// console.log("ID" + data.results["id"]);
+				// console.log("ID: " + data.results["id"]);
 			}
 		}.bind(this), errorCB);
 
