@@ -26,7 +26,7 @@ $(document).ready(function() {
 				console.log("HELLO JOSE!");
 				// console.log("HELLO JOSE!" + data);
 			}
-		}, errorCB);
+		}.bind(this), errorCB);
 
 		return {
 			title: person,
