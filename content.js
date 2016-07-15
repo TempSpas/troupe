@@ -9,6 +9,7 @@ function successCB(data) {
 	console.log("Success callback: " + data);
 };
 
+// Error callback function
 function errorCB(data) {
 	console.log("Error callback: " + data);
 	// https://www.themoviedb.org/documentation/api/status-codes
