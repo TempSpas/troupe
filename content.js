@@ -24,7 +24,9 @@ $(document).ready(function() {
 			data = JSON.parse(data);
 			if(data.hasOwnProperty("results") && data.results.length > 0) {
 				console.log("HELLO JOSE!");
-				// console.log("HELLO JOSE!" + data);
+
+				console.log("ID: " + data.results[2]);
+				// console.log("ID" + data.results["id"]);
 			}
 		}.bind(this), errorCB);
 
