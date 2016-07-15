@@ -8,5 +8,5 @@ Coming to the Chrome Web Store soon.
 This extension is made possible by the following:
 
 * [TMDb](https://www.themoviedb.org/)
-* [Tipped](http://www.tippedjs.com/)
+* [Tipped.js](http://www.tippedjs.com/)
 * [Highlight.js](http://bartaz.github.io/sandbox.js/jquery.highlight.html)
