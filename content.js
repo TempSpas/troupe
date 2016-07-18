@@ -36,6 +36,7 @@ $(document).ready(function() {
 
 
 						console.log("Test print id: " + item.id);
+						console.log("Image: " + item.img);
 					}
 				}
 
