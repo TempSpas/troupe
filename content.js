@@ -26,7 +26,19 @@ $(document).ready(function() {
 			if(data.hasOwnProperty("results") && data.results.length > 0) {
 				console.log("HELLO JOSE!");
 
-				
+				for (var i = data.results.length - 1; i >= 0; i--) {
+					if(data.results[i]["name"].length < 15) {
+						// console.log("ID: ")
+						var item = {name: "", id: "", img: ""};
+						item.name = data.results[i][name];
+						item.img = data.results[i]["profile_path"];
+						item.id = data.results[i]["id"];
+
+
+						console.log("Test print id: " + item.id);
+					}
+				}
+
 				// Neither of these work:
 				// console.log("ID: " + data.results[2]);
 				// console.log("ID: " + data.results["id"]);
