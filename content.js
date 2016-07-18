@@ -48,7 +48,8 @@ $(document).ready(function() {
 
 		return {
 			title: person,
-			content: "content blah"
+			content: item.id
+			// content: "content blah"
 			//content: personToSearch
 		};
 	}, {
