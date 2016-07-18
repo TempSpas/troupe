@@ -2,7 +2,7 @@
 // Highlight all instances of the actor's name on the page
 $("body").highlight("George Clooney");
 
-var id;
+// var id;
 
 // Callback functions for responses
 function successCB(data) {
@@ -22,7 +22,7 @@ $(document).ready(function() {
 		var id = "";
 		var actors = [];
 		
-		theMovieDb.search.getPerson({"query":person}, function (data, callback) {
+		theMovieDb.search.getPerson({"query":person}, function (data, item) {
 			data = JSON.parse(data);
 			if(data.hasOwnProperty("results") && data.results.length > 0) {
 				console.log("HELLO JOSE!");
@@ -40,16 +40,18 @@ $(document).ready(function() {
 						console.log("Test ID: " + id);
 						console.log("Test print id: " + item.id);
 						console.log("Image: " + item.img);
+
+						return {
+							item;
+						};
 					}
 				}
 			}
-			callback();
 		}.bind(this), errorCB);
 
 		return {	
 			title: person,
-			content: actors[0].id
-			// content: "content blah"
+			content: "content blah"
 			//content: personToSearch
 		};
 	}, {
