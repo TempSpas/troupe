@@ -21,9 +21,8 @@ $(document).ready(function() {
 		var person = $('.highlight').html();
 		var id = "";
 		var actors = [];
-		var temp = 0;
 		
-		theMovieDb.search.getPerson({"query":person}, temp = function (data, item) {
+		var test = theMovieDb.search.getPerson({"query":person}, function (data) {
 			data = JSON.parse(data);
 			if(data.hasOwnProperty("results") && data.results.length > 0) {
 				console.log("HELLO JOSE!");
@@ -41,18 +40,19 @@ $(document).ready(function() {
 						console.log("Test ID: " + id);
 						console.log("Test print id: " + item.id);
 						console.log("Image: " + item.img);
-
-						return 1;
 					}
 				}
 			}
+
+			return 1;
 		}.bind(this), errorCB);
 
-		console.log("Test: " + temp);
+		console.log("Test: " + test);
 
-		return {
+		return {	
 			title: person,
-			content: "content blah"
+			content: actors[0].id
+			// content: "content blah"
 			//content: personToSearch
 		};
 	}, {
