@@ -22,10 +22,12 @@ $(document).ready(function() {
 		var id = "";
 		var actors = [];
 		
-		var test = theMovieDb.search.getPerson({"query":person}, function (data) {
+		theMovieDb.search.getPerson({"query":person}, function (data) {
 			data = JSON.parse(data);
 			if(data.hasOwnProperty("results") && data.results.length > 0) {
 				console.log("HELLO JOSE!");
+
+				alert(data);
 
 				for (var i = data.results.length - 1; i >= 0; i--) {
 					if(data.results[i]["name"].length < 15) {
@@ -43,16 +45,11 @@ $(document).ready(function() {
 					}
 				}
 			}
-
-			return 1;
 		}.bind(this), errorCB);
-
-		console.log("Test: " + test);
 
 		return {	
 			title: person,
-			content: actors[0].id
-			// content: "content blah"
+			content: "content blah"
 			//content: personToSearch
 		};
 	}, {
