@@ -60,8 +60,6 @@ $(document).ready(function() {
 // Highlight all instances of the actor's name on the page
 $("body").highlight("George Clooney");
 
-// var id;
-
 // Callback functions for responses
 function successCB(data) {
 	console.log("Success callback: " + data);
@@ -85,12 +83,11 @@ $(document).ready(function() {
 				if(data.results[i]["name"].length < 15) {
 					// console.log("ID: ")
 					var item = {name: "", id: "", img: ""};
-					item.name = data.results[i][name];
+					item.name = data.results[i]["name"];
 					item.img = data.results[i]["profile_path"];
 					item.id = data.results[i]["id"];
 					id = item.id;
 
-					actors.push(item);
 					// console.log("Test ID: " + id);
 					// console.log("Test print id: " + item.id);
 					// console.log("Image: " + item.img);
