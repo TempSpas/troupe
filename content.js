@@ -48,6 +48,8 @@ $(document).ready(function() {
 			}
 		}.bind(this), errorCB);
 
+		console.log("Test: " + temp);
+
 		return {
 			title: person,
 			content: "content blah"
