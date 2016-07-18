@@ -33,7 +33,7 @@ $(document).ready(function() {
 						item.name = data.results[i][name];
 						item.img = data.results[i]["profile_path"];
 						item.id = data.results[i]["id"];
-
+						id = item.id;
 
 						console.log("Test print id: " + item.id);
 						console.log("Image: " + item.img);
@@ -48,7 +48,7 @@ $(document).ready(function() {
 
 		return {
 			title: person,
-			content: item.id
+			content: id
 			// content: "content blah"
 			//content: personToSearch
 		};
