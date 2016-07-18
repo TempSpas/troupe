@@ -20,8 +20,9 @@ $(document).ready(function() {
 	{
 		var person = $('.highlight').html();
 		var id = "";
+		var actors = [];
 		
-		var json = theMovieDb.search.getPerson({"query":person}, function (data) {
+		theMovieDb.search.getPerson({"query":person}, function (data) {
 			data = JSON.parse(data);
 			if(data.hasOwnProperty("results") && data.results.length > 0) {
 				console.log("HELLO JOSE!");
@@ -35,20 +36,17 @@ $(document).ready(function() {
 						item.id = data.results[i]["id"];
 						id = item.id;
 
+						actors.push(item);
 						console.log("Test print id: " + item.id);
 						console.log("Image: " + item.img);
 					}
 				}
-
-				// Neither of these work:
-				// console.log("ID: " + data.results[2]);
-				// console.log("ID: " + data.results["id"]);
 			}
 		}.bind(this), errorCB);
 
 		return {
 			title: person,
-			content: id
+			content: actors[0].id
 			// content: "content blah"
 			//content: personToSearch
 		};
