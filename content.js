@@ -75,36 +75,39 @@ function errorCB(data) {
 
 var person = $('.highlight').html();
 
-theMovieDb.search.getPerson({"query":person}, function (data) {
-	data = JSON.parse(data);
-	if(data.hasOwnProperty("results") && data.results.length > 0) {
-		console.log("HELLO JOSE!");
+$(document).ready(function() {
+	theMovieDb.search.getPerson({"query":person}, function (data) {
+		data = JSON.parse(data);
+		if(data.hasOwnProperty("results") && data.results.length > 0) {
+			console.log("HELLO JOSE!");
 
-		for (var i = data.results.length - 1; i >= 0; i--) {
-			if(data.results[i]["name"].length < 15) {
-				// console.log("ID: ")
-				var item = {name: "", id: "", img: ""};
-				item.name = data.results[i][name];
-				item.img = data.results[i]["profile_path"];
-				item.id = data.results[i]["id"];
-				id = item.id;
+			for (var i = data.results.length - 1; i >= 0; i--) {
+				if(data.results[i]["name"].length < 15) {
+					// console.log("ID: ")
+					var item = {name: "", id: "", img: ""};
+					item.name = data.results[i][name];
+					item.img = data.results[i]["profile_path"];
+					item.id = data.results[i]["id"];
+					id = item.id;
 
-				actors.push(item);
-				// console.log("Test ID: " + id);
-				// console.log("Test print id: " + item.id);
-				// console.log("Image: " + item.img);
-				$(document).ready(function() {
-					Tipped.create('.highlight', function(element)
-					{
-						return {
-							title: item.name,
-							content: item.id
-						};
-					}, {
-						skin: 'light'
+					actors.push(item);
+					// console.log("Test ID: " + id);
+					// console.log("Test print id: " + item.id);
+					// console.log("Image: " + item.img);
+					$(document).ready(function() {
+						Tipped.create('.highlight', function(element)
+						{
+							return {
+								title: item.name,
+								content: item.id
+							};
+						}, {
+							skin: 'light'
+						});
 					});
-				});
+				}
 			}
 		}
-	}
-}.bind(this), errorCB);
+	}.bind(this), errorCB);
+});
+
