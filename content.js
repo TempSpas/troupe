@@ -22,7 +22,7 @@ $(document).ready(function() {
 		var id = "";
 		var actors = [];
 		
-		theMovieDb.search.getPerson({"query":person}, function (data) {
+		theMovieDb.search.getPerson({"query":person}, function (data, callback) {
 			data = JSON.parse(data);
 			if(data.hasOwnProperty("results") && data.results.length > 0) {
 				console.log("HELLO JOSE!");
@@ -43,6 +43,7 @@ $(document).ready(function() {
 					}
 				}
 			}
+			callback();
 		}.bind(this), errorCB);
 
 		return {	
