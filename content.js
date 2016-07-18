@@ -37,6 +37,7 @@ $(document).ready(function() {
 						id = item.id;
 
 						actors.push(item);
+						console.log("Test ID: " + id);
 						console.log("Test print id: " + item.id);
 						console.log("Image: " + item.img);
 					}
@@ -44,7 +45,7 @@ $(document).ready(function() {
 			}
 		}.bind(this), errorCB);
 
-		return {
+		return {	
 			title: person,
 			content: actors[0].id
 			// content: "content blah"
