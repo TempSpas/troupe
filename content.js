@@ -34,19 +34,15 @@ $(document).ready(function() {
 						item.img = data.results[i]["profile_path"];
 						item.id = data.results[i]["id"];
 						id = item.id;
-
+						console.log("Test ID: " + id);
 						console.log("Test print id: " + item.id);
 						console.log("Image: " + item.img);
 					}
 				}
-
-				// Neither of these work:
-				// console.log("ID: " + data.results[2]);
-				// console.log("ID: " + data.results["id"]);
 			}
 		}.bind(this), errorCB);
-
-		return {
+console.log("Test ID: " + id);
+		return {	
 			title: person,
 			content: id
 			// content: "content blah"
