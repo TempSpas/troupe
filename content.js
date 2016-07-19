@@ -78,13 +78,13 @@ $(document).ready(function() {
 	{
 		data = JSON.parse(data);
 		
-		if(data.hasOwnProperty("results") && data.results.length > 0 &&
-		   data.results[i]["profile_path"] != "")
+		if(data.hasOwnProperty("results") && data.results.length > 0)
 		{
 			console.log("HELLO JOSE!");
 
 			for (var i = data.results.length - 1; i >= 0; i--) {
-				if(data.results[i]["name"].length < 15) {
+				if(data.results[i]["name"].length < 15 && data.results[i]["profile_path"] != "")
+				{
 					// console.log("ID: ")
 					var item = {name: "", id: "", img: ""};
 					item.name = data.results[i]["name"];
