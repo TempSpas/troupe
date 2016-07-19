@@ -74,9 +74,13 @@ function errorCB(data) {
 var person = $('.highlight').html();
 
 $(document).ready(function() {
-	theMovieDb.search.getPerson({"query":person}, function (data) {
+	theMovieDb.search.getPerson({"query":person}, function (data)
+	{
 		data = JSON.parse(data);
-		if(data.hasOwnProperty("results") && data.results.length > 0) {
+		
+		if(data.hasOwnProperty("results") && data.results.length > 0 &&
+		   data.results[i]["profile_path"] != "")
+		{
 			console.log("HELLO JOSE!");
 
 			for (var i = data.results.length - 1; i >= 0; i--) {
