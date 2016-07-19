@@ -44,7 +44,8 @@ $(document).ready(function() {
 						// console.log("Test print id: " + item.id);
 						// console.log("Image: " + item.img);
 						$(document).ready(function() {
-							Tipped.create('.highlight', function(element)
+							// Tipped.create('.highlight', function(element)
+							Tipped.create($(this), function(element)
 							{
 								return {
 									title: item.name,
@@ -58,7 +59,7 @@ $(document).ready(function() {
 				}
 			}
 		}.bind(this), errorCB);		
-	}
+	});
 
 	// theMovieDb.search.getPerson({"query":person}, function (data)
 	// {
