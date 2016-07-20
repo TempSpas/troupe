@@ -35,62 +35,67 @@ var nameCount = 0;
 	for( var l = 0; l< names.length; l++){
 	    person[l] = $(names[l]).html();
 	}
-$(document).ready(function hello(count) {
-		if(Number.isInteger(count) && count < person.length){
-			    count1 = count++;
-				hello(count);
-		}
-		else{
-			if(Number.isInteger(count)){
-				//console.log("1");
-				return;
-			}
-			else{
-				count = 0;
-				hello(count);
+$(document).ready( 
+function(){
+		var n;
+    for( n = 0; n < names.length; n++){
+		(function (count) {
+			// if(Number.isInteger(count) && count < person.length){
+			// 	    count1 = count++;
+			// 		hello(count);
+			// }
+			// else{
+			// 	if(Number.isInteger(count)){
+			// 		//console.log("1");
+			// 		return;
+			// 	}
+			// 	else{
+			// 		count = 0;
+			// 		hello(count);
 
-			}
-		}
-		theMovieDb.search.getPerson({"query":person[count]}, function (data)
-		{
-//			console.log(names[nameCount]);
-			data = JSON.parse(data);
-			if(data.hasOwnProperty("results") && data.results.length > 0)
+			// 	}
+			// }
+			theMovieDb.search.getPerson({"query":person[count]}, function (data)
 			{
-				//console.log(JSON.stringify(data.results));
+	//			console.log(names[nameCount]);
+				data = JSON.parse(data);
+				if(data.hasOwnProperty("results") && data.results.length > 0)
+				{
+					//console.log(JSON.stringify(data.results));
 
-				for (var i = data.results.length - 1; i >= 0; i--) {
-					if(data.results[i]["name"].length < 20 && data.results[i]["profile_path"] != "")
-					{
-//						console.log("third");
-						// console.log("ID: ")
-						var item = {name: "", id: "", img: ""};
-						item.name = data.results[i]["name"];
-						item.img = data.results[i]["profile_path"];
-						item.id = data.results[i]["id"];
-						id = item.id;
+					for (var i = data.results.length - 1; i >= 0; i--) {
+						if(data.results[i]["name"].length < 20 && data.results[i]["profile_path"] != "")
+						{
+	//						console.log("third");
+							// console.log("ID: ")
+							var item = {name: "", id: "", img: ""};
+							item.name = data.results[i]["name"];
+							item.img = data.results[i]["profile_path"];
+							item.id = data.results[i]["id"];
+							id = item.id;
 
-						// console.log("Test ID: " + id);
-						// console.log("Test print id: " + item.id);
-						// console.log("Image: " + item.img);
-						//console.log(names[l]);
-						//$(document).ready(function() {
-//							console.log(names[nameCount]);
-							Tipped.create(names[count], function(element)
-							{
-								return {
-									title: item.name,
-									content: item.id
-								};
-							}, {
-								skin: 'light'
-							});
-						//});
+							// console.log("Test ID: " + id);
+							// console.log("Test print id: " + item.id);
+							// console.log("Image: " + item.img);
+							//console.log(names[l]);
+							//$(document).ready(function() {
+	//							console.log(names[nameCount]);
+								Tipped.create(names[count], function(element)
+								{
+									return {
+										title: item.name,
+										content: item.id
+									};
+								}, {
+									skin: 'light'
+								});
+							//});
+						}
 					}
 				}
-		}
-		return;
-		}, errorCB);		
+			}, errorCB);	
+		})(n);
+	}	
 	// theMovieDb.search.getPerson({"query":person}, function (data)
 	// {
 	// 	data = JSON.parse(data);
