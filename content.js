@@ -1,6 +1,13 @@
+//Lets suppose we've implemented the code that grabs the names on the page
+//puts them in an array and gets rid of duplicates
+//it would result in something like:
+var names = ["George Clooney","Brad Pitt","Matt Damon"]
+var person = []
 // Highlight all instances of the actor's name on the page
-$("body").highlight("George Clooney");
-
+for( var j = 0; j< names.length; j++){
+	$("body").highlight(names[j]);
+	$("body").names(names[j]);
+}
 // Callback functions for responses
 function successCB(data) {
 	console.log("Success callback: " + data);
@@ -17,15 +24,37 @@ function errorCB(data) {
 // $( ".highlight" ).each(function( i ) {
 // 	var person = $(this).html();
 // }
+var nameCount = 0;
+	for( var k = 0; k< names.length; k++){
+		names[k]= '.' + names[k].replace(/ /g,'.');
+	}
+	for( var l = 0; l< names.length; l++){
+	    person[l] = $(names[l]).html();
+	}
+$(document).ready(function hello(count) {
+		//console.log(person.length);
+		console.log(count);
+		if(Number.isInteger(count) && count < person.length){
+			    count1 = count++;
+			    console.log(count);
+				hello(count);
+				//return;
+		}
+		else{
+			if(Number.isInteger(count)){
+				console.log("1");
+				return;
+			}
+			else{
+				count = 0;
+				hello(count);
 
-$(document).ready(function() {
-	$( ".highlight" ).each(function( i ) {
-		var person = $(this).html();
-
-		theMovieDb.search.getPerson({"query":person}, function (data)
+			}
+		}
+		theMovieDb.search.getPerson({"query":person[count]}, function (data)
 		{
+//			console.log(names[nameCount]);
 			data = JSON.parse(data);
-			
 			if(data.hasOwnProperty("results") && data.results.length > 0)
 			{
 				console.log("HELLO JOSE!");
@@ -33,6 +62,7 @@ $(document).ready(function() {
 				for (var i = data.results.length - 1; i >= 0; i--) {
 					if(data.results[i]["name"].length < 15 && data.results[i]["profile_path"] != "")
 					{
+						console.log("third");
 						// console.log("ID: ")
 						var item = {name: "", id: "", img: ""};
 						item.name = data.results[i]["name"];
@@ -43,8 +73,10 @@ $(document).ready(function() {
 						// console.log("Test ID: " + id);
 						// console.log("Test print id: " + item.id);
 						// console.log("Image: " + item.img);
-						$(document).ready(function() {
-							Tipped.create('.highlight', function(element)
+						//console.log(names[l]);
+						//$(document).ready(function() {
+//							console.log(names[nameCount]);
+							Tipped.create(names[count], function(element)
 							{
 								return {
 									title: item.name,
@@ -53,13 +85,12 @@ $(document).ready(function() {
 							}, {
 								skin: 'light'
 							});
-						});
+						//});
 					}
 				}
-			}
-		}.bind(this), errorCB);		
-	}
-
+		}
+		return;
+		}, errorCB);		
 	// theMovieDb.search.getPerson({"query":person}, function (data)
 	// {
 	// 	data = JSON.parse(data);
