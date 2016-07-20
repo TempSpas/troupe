@@ -58,14 +58,14 @@ $(document).ready(function() {
 				data = JSON.parse(data);
 				if(data.hasOwnProperty("results") && data.results.length > 0)
 				{
-					for (var i = data.results.length - 1; i >= 0; i--)
-					{
-						if(data.results[i]["name"].length < 20 && data.results[i]["profile_path"] != "")
+					// for (var i = data.results.length - 1; i >= 0; i--)
+					// {
+						if(data.results[0]["name"].length < 20 && data.results[0]["profile_path"] != "")
 						{
 							var item = {name: "", id: "", img: ""};
-							item.name = data.results[i]["name"];
-							item.img = data.results[i]["profile_path"];
-							item.id = data.results[i]["id"];
+							item.name = data.results[0]["name"];
+							item.img = data.results[0]["profile_path"];
+							item.id = data.results[0]["id"];
 							id = item.id;
 
 						
@@ -79,7 +79,7 @@ $(document).ready(function() {
 								skin: 'light'
 							});
 						}
-					}
+					//}
 				}
 			}, errorCB);
 		})(n);
