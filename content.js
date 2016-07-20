@@ -11,7 +11,7 @@ for( var j = 0; j< names.length; j++){
 	newTag['className'] = names[j];
 	$("body").highlight(names[j]);
 	$("body").highlight(names[j],newTag);
-//	$("body").names(names[j]);
+	//$("body").names(names[j]);
 }
 
 // Callback functions for responses
