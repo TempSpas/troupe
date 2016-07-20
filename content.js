@@ -1,7 +1,7 @@
 //Lets suppose we've implemented the code that grabs the names on the page
 //puts them in an array and gets rid of duplicates
 //it would result in something like:
-var names = ["George Clooney","Brad Pitt","Matt Damon"]
+var names = ["George Clooney","Brad Pitt","Matt Damon", "Don Cheadle", "David Pressman", "Jerry Weintraub", "Martin Sheen", "Nicole Kidman", "Robert Rodriguez"]
 var person = []
 // Highlight all instances of the actor's name on the page
 for( var j = 0; j< names.length; j++){
@@ -32,13 +32,9 @@ var nameCount = 0;
 	    person[l] = $(names[l]).html();
 	}
 $(document).ready(function hello(count) {
-		//console.log(person.length);
-		console.log(count);
 		if(Number.isInteger(count) && count < person.length){
 			    count1 = count++;
-			    console.log(count);
 				hello(count);
-				//return;
 		}
 		else{
 			if(Number.isInteger(count)){
@@ -57,12 +53,12 @@ $(document).ready(function hello(count) {
 			data = JSON.parse(data);
 			if(data.hasOwnProperty("results") && data.results.length > 0)
 			{
-				console.log("HELLO JOSE!");
+				//console.log(JSON.stringify(data.results));
 
 				for (var i = data.results.length - 1; i >= 0; i--) {
-					if(data.results[i]["name"].length < 15 && data.results[i]["profile_path"] != "")
+					if(data.results[i]["name"].length < 20 && data.results[i]["profile_path"] != "")
 					{
-						console.log("third");
+//						console.log("third");
 						// console.log("ID: ")
 						var item = {name: "", id: "", img: ""};
 						item.name = data.results[i]["name"];
