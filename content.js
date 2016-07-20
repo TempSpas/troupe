@@ -57,7 +57,7 @@ $(document).ready(function() {
 						Tipped.create(names[count], function(element)
 						{
 							return {
-								title: item.name,
+								title: $(item.name).prepend('img src="http://i.imgur.com/v1VCmRZ.jpg" />'),
 								content: item.id + "<hr>" + "hello jose!"
 							};
 						}, {
