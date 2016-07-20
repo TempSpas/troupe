@@ -58,7 +58,7 @@ $(document).ready(function() {
 						{
 							return {
 								title: item.name,
-								content: item.id
+								content: item.id + "<hr>" + "hello jose!"
 							};
 						}, {
 							skin: 'light'
