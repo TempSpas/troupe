@@ -37,22 +37,7 @@ $(document).ready(function() {
 	var n;
     for( n = 0; n < names.length; n++)
     {
-    	(function (count) {
-		// if(Number.isInteger(count) && count < person.length){
-		// 	    count1 = count++;
-		// 		hello(count);
-		// }
-		// else{
-		// 	if(Number.isInteger(count)){
-		// 		//console.log("1");
-		// 		return;
-		// 	}
-		// 	else{
-		// 		count = 0;
-		// 		hello(count);
-
-		// 	}
-		// }
+    	(function(count) {
 			theMovieDb.search.getPerson({"query":person[count]}, function (data)
 			{
 				data = JSON.parse(data);
@@ -60,25 +45,25 @@ $(document).ready(function() {
 				{
 					// for (var i = data.results.length - 1; i >= 0; i--)
 					// {
-						if(data.results[0]["name"].length < 20 && data.results[0]["profile_path"] != "")
-						{
-							var item = {name: "", id: "", img: ""};
-							item.name = data.results[0]["name"];
-							item.img = data.results[0]["profile_path"];
-							item.id = data.results[0]["id"];
-							id = item.id;
+					if(data.results[0]["name"].length < 20 && data.results[0]["profile_path"] != "")
+					{
+						var item = {name: "", id: "", img: ""};
+						item.name = data.results[0]["name"];
+						item.img = data.results[0]["profile_path"];
+						item.id = data.results[0]["id"];
+						id = item.id;
 
-						
-							Tipped.create(names[count], function(element)
-							{
-								return {
-									title: item.name,
-									content: item.id
-								};
-							}, {
-								skin: 'light'
-							});
-						}
+					
+						Tipped.create(names[count], function(element)
+						{
+							return {
+								title: item.name,
+								content: item.id
+							};
+						}, {
+							skin: 'light'
+						});
+					}
 					//}
 				}
 			}, errorCB);
