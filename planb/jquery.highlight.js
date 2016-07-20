@@ -106,31 +106,31 @@ jQuery.fn.highlight = function (words, options) {
     });
 };
 
-jQuery.fn.names = function (words, options) {
-    var settings = {element: 'span', caseSensitive: false, wordsOnly: false };
-    settings['className'] = words;
-    jQuery.extend(settings, options);
+// jQuery.fn.names = function (words, options) {
+//     var settings = {element: 'span', caseSensitive: false, wordsOnly: false };
+//     settings['className'] = words;
+//     jQuery.extend(settings, options);
     
-    if (words.constructor === String) {
-        words = [words];
-    }
-    words = jQuery.grep(words, function(word, i){
-      return word != '';
-    });
-    words = jQuery.map(words, function(word, i) {
-      return word.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
-    });
-    if (words.length == 0) { return this; };
+//     if (words.constructor === String) {
+//         words = [words];
+//     }
+//     words = jQuery.grep(words, function(word, i){
+//       return word != '';
+//     });
+//     words = jQuery.map(words, function(word, i) {
+//       return word.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+//     });
+//     if (words.length == 0) { return this; };
 
-    var flag = settings.caseSensitive ? "" : "i";
-    var pattern = "(" + words.join("|") + ")";
-    if (settings.wordsOnly) {
-        pattern = "\\b" + pattern + "\\b";
-    }
-    var re = new RegExp(pattern, flag);
+//     var flag = settings.caseSensitive ? "" : "i";
+//     var pattern = "(" + words.join("|") + ")";
+//     if (settings.wordsOnly) {
+//         pattern = "\\b" + pattern + "\\b";
+//     }
+//     var re = new RegExp(pattern, flag);
     
-    return this.each(function () {
-        jQuery.highlight(this, re, settings.element, settings.className);
-    });
-};
+//     return this.each(function () {
+//         jQuery.highlight(this, re, settings.element, settings.className);
+//     });
+// };
 

@@ -3,10 +3,14 @@
 //it would result in something like:
 var names = ["George Clooney","Brad Pitt","Matt Damon", "Don Cheadle", "David Pressman", "Jerry Weintraub", "Martin Sheen", "Nicole Kidman", "Robert Rodriguez"]
 var person = []
+
 // Highlight all instances of the actor's name on the page
 for( var j = 0; j< names.length; j++){
-	$("body").highlight(names[j]);
-	$("body").names(names[j]);
+var newTag = {element: 'span'};
+newTag['className'] = names[j];
+$("body").highlight(names[j]);
+$("body").highlight(names[j],newTag);
+//	$("body").names(names[j]);
 }
 // Callback functions for responses
 function successCB(data) {
@@ -38,7 +42,7 @@ $(document).ready(function hello(count) {
 		}
 		else{
 			if(Number.isInteger(count)){
-				console.log("1");
+				//console.log("1");
 				return;
 			}
 			else{
