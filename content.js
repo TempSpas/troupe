@@ -51,7 +51,7 @@ $(document).ready(function() {
 						item.name = data.results[0]["name"];
 						item.img = data.results[0]["profile_path"];
 						item.id = data.results[0]["id"];
-						item.known_for = data.results[0]["known_for"];
+						item.known_for = data.results[0]["known_for"][0]["original_name"];
 
 						id = item.id;
 
