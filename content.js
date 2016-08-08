@@ -63,7 +63,8 @@ $(document).ready(function() {
 								content: item.id + "<hr>" + "hello jose!"
 							};
 						}, {
-							skin: 'light'
+							skin: 'white'
+							// skin: 'light'
 						});
 					}
 					//}
