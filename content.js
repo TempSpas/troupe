@@ -52,11 +52,11 @@ $(document).ready(function() {
 						item.img = data.results[0]["profile_path"];
 						item.id = data.results[0]["id"];
 						// item.known_for = data.results[0]["known_for"][0]["original_title"];
-						var known_for = data.results[0]["known_for"][0];
-						known_for = JSON.parse(known_for);
+						known_for = data.results[0]["known_for"][0];
+						
 
 						if(known_for.hasOwnProperty("original_title")) {
-							item.known_for = known_for[0]["original_title"];
+							item.known_for = known_for.original_title //[0]["original_title"];
 						}
 
 						id = item.id;
