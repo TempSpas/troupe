@@ -52,11 +52,26 @@ $(document).ready(function() {
 						item.img = data.results[0]["profile_path"];
 						item.id = data.results[0]["id"];
 						// item.known_for = data.results[0]["known_for"][0]["original_title"];
-						known_for = data.results[0]["known_for"][0];
-						
+						known_for1JSON = data.results[0]["known_for"][0];
+						known_for2JSON = data.results[0]["known_for"][1];
+						known_for3JSON = data.results[0]["known_for"][2];
+
+						var knownFor1 = {title: "", img: "", desc: ""};
+						var knownFor2 = {title: "", img: "", desc: ""};
+						var knownFor3 = {title: "", img: "", desc: ""};
 
 						if(known_for.hasOwnProperty("original_title")) {
-							item.known_for = known_for.original_title //[0]["original_title"];
+							// item.known_for = known_for.original_title //[0]["original_title"];
+							knownFor1 = known_for1JSON.original_title
+						}
+
+						if(known_for2JSON.hasOwnProperty("original_title")) {
+							// item.known_for = known_for.original_title
+							knownFor2.title = known_for2JSON.original_title
+						}
+
+						if(known_for3JSON.hasOwnProperty("original_title")) {
+							knownFor3.title = known_for3JSON.original_title
 						}
 
 						id = item.id;
@@ -69,7 +84,7 @@ $(document).ready(function() {
 								title: item.name,
 								// title: $('#image').html(img) + item.name,
 								// content: item.id + "<hr>" + "hello jose!"
-								content: item.known_for
+								content: knownFor1.title + "<hr>" + knownFor2.title + "<hr>" + knownFor3.title
 							};
 						}, {
 							skin: 'white'
