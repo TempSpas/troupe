@@ -51,10 +51,15 @@ $(document).ready(function() {
 						item.name = data.results[0]["name"];
 						item.img = data.results[0]["profile_path"];
 						item.id = data.results[0]["id"];
-						item.known_for = data.results[0]["known_for"][0]["original_name"];
+						// item.known_for = data.results[0]["known_for"][0]["original_title"];
+						var known_for = data.results[0]["known_for"][0];
+						known_for = JSON.parse(known_for);
+
+						if(known_for.hasOwnProperty("original_title")) {
+							item.known_for = known_for[0]["original_title"];
+						}
 
 						id = item.id;
-
 					
 						Tipped.create(names[count], function(element)
 						{
