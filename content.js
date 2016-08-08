@@ -25,11 +25,11 @@ function errorCB(data) {
 	// https://www.themoviedb.org/documentation/api/status-codes
 };
 
-// Add descriptive comment here
-for( var k = 0; k < names.length; k++) {
+var nameCount = 0;
+for( var k = 0; k< names.length; k++){
 	names[k]= '.' + names[k].replace(/ /g,'.');
 }
-for( var l = 0; l < names.length; l++) {
+for( var l = 0; l< names.length; l++){
     person[l] = $(names[l]).html();
 }
 
