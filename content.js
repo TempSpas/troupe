@@ -47,10 +47,12 @@ $(document).ready(function() {
 					// {
 					if(data.results[0]["name"].length < 20 && data.results[0]["profile_path"] != "")
 					{
-						var item = {name: "", id: "", img: ""};
+						var item = {name: "", id: "", img: "", known_for:""};
 						item.name = data.results[0]["name"];
 						item.img = data.results[0]["profile_path"];
 						item.id = data.results[0]["id"];
+						item.known_for = data.results[0]["known_for"];
+
 						id = item.id;
 
 					
@@ -61,7 +63,8 @@ $(document).ready(function() {
 							return {
 								title: item.name,
 								// title: $('#image').html(img) + item.name,
-								content: item.id + "<hr>" + "hello jose!"
+								// content: item.id + "<hr>" + "hello jose!"
+								content: item.known_for
 							};
 						}, {
 							skin: 'white'
