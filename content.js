@@ -63,7 +63,7 @@ $(document).ready(function() {
 						// if(known_for.hasOwnProperty("original_title")) {
 						if(known_for1JSON.hasOwnProperty("original_title")) {
 							// item.known_for = known_for.original_title //[0]["original_title"];
-							knownFor1 = known_for1JSON.original_title
+							knownFor1.title = known_for1JSON.original_title
 						}
 
 						if(known_for2JSON.hasOwnProperty("original_title")) {
