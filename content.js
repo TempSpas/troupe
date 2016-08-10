@@ -56,23 +56,30 @@ $(document).ready(function() {
 						known_for2JSON = data.results[0]["known_for"][1];
 						known_for3JSON = data.results[0]["known_for"][2];
 
+						// Add and set variables for tooltip content; results that people
+						// are known for.
+						// TO-DO: add more conditions to the if-statements
 						var knownFor1 = {title: "", img: "", desc: ""};
 						var knownFor2 = {title: "", img: "", desc: ""};
 						var knownFor3 = {title: "", img: "", desc: ""};
 
-						// if(known_for.hasOwnProperty("original_title")) {
 						if(known_for1JSON.hasOwnProperty("original_title")) {
 							// item.known_for = known_for.original_title //[0]["original_title"];
 							knownFor1.title = known_for1JSON.original_title
+							knownFor1.img = known_for1JSON.backdrop_path
+							knownFor1.img = known_for1JSON.overview
 						}
 
 						if(known_for2JSON.hasOwnProperty("original_title")) {
-							// item.known_for = known_for.original_title
 							knownFor2.title = known_for2JSON.original_title
+							knownFor2.img = known_for2JSON.backdrop_path
+							knownFor2.img = known_for2JSON.overview
 						}
 
 						if(known_for3JSON.hasOwnProperty("original_title")) {
 							knownFor3.title = known_for3JSON.original_title
+							knownFor3.img = known_for3JSON.backdrop_path
+							knownFor3.img = known_for3JSON.overview
 						}
 
 						id = item.id;
@@ -84,12 +91,11 @@ $(document).ready(function() {
 							return {
 								title: item.name,
 								// title: $('#image').html(img) + item.name,
-								// content: item.id + "<hr>" + "hello jose!"
 								content: knownFor1.title + "<hr>" + knownFor2.title + "<hr>" + knownFor3.title
 							};
 						}, {
-							skin: 'white'
-							// skin: 'light'
+							// skin: 'white'
+							skin: 'light'
 						});
 					}
 					//}
